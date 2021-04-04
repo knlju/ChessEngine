@@ -14,6 +14,8 @@ Test results: **11 wins, 1 draw and 6 losses.**
 
 **Elo reached: 1542.**
 
+Rating distribution and placement on [chess.com](https://www.chess.com/):
+
 ![rating](https://user-images.githubusercontent.com/28933578/113514401-91345800-956e-11eb-88e2-af86c82451bc.png)
 
 Notice: tested on already placed account. 
