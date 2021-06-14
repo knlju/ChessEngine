@@ -1,6 +1,5 @@
 package gui;
 
-import engine.tabla.bitboard.BoardGenerator;
 import engine.tabla.figure.Boja;
 import engine.tabla.figure.Figura;
 import javafx.application.Application;
@@ -29,8 +28,7 @@ public class GUI extends Application {
     public static ArrayList<ImageView> figure = new ArrayList<>();
 
     @Override
-    public void start(Stage primaryStage) throws Exception {
-        BoardGenerator.initiateStandardChess();
+    public void start(Stage primaryStage) {
         Scene scene = new Scene(napraviSadrzaj());
         primaryStage.setScene(scene);
         primaryStage.setResizable(false);
@@ -58,13 +56,9 @@ public class GUI extends Application {
     private static void dodajMenu() {
         Menu igra = new Menu("Igra");
         MenuItem novaIgra = new MenuItem("Nova igra...");
-        novaIgra.setOnAction(e -> {
-            new NovaIgraDialog().display();
-        });
+        novaIgra.setOnAction(e -> new NovaIgraDialog().display());
         MenuItem vratiPotez = new MenuItem("Vrati potez");
-        vratiPotez.setOnAction(e -> {
-            Partija.vratiNaPoslednjiIgracevPotez();
-        });
+        vratiPotez.setOnAction(e -> Partija.vratiNaPoslednjiIgracevPotez());
         igra.getItems().addAll(novaIgra, vratiPotez);
         MenuBar mb = new MenuBar();
         mb.getMenus().addAll(igra);
